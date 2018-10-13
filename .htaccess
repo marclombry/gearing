@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^$ core/app/public/index.php
+RewriteRule ^login$ core/connexion.php
+RewriteRule ^deco$ core/connexion.php?deco
+RewriteRule ^admin$ core/app/admin
+RewriteRule ^create$ core/app/admin/create.php
+RewriteRule ^admin/delete/id/([0-9]+)$ core/app/admin/delete.php?id=$1  [QSA,L]
+RewriteRule ^article/([a-z0-9-]+)-([0-9]+)$ article.php?titre=$1&id=$2
