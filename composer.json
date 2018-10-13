@@ -1,0 +1,17 @@
+{
+    "name": "spikevargas/gearing",
+    "authors": [
+        {
+            "name": "spikevargas",
+            "email": "marc.lombry@gmail.com"
+        }
+    ],
+    "autoload": {
+	   "psr-4": {
+	      "core\\":"core"
+	   }
+	},
+    "require": {
+        "twbs/bootstrap": "^4.1"
+    }
+}
