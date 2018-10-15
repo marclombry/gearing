@@ -7,3 +7,4 @@ use \core\app\classes\Route;
 use \core\app\classes\MySession;
 var_dump(MySession::Verif_session());
 echo Form::input("text","f");
+

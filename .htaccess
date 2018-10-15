@@ -7,3 +7,16 @@ RewriteRule ^admin$ core/app/admin
 RewriteRule ^create$ core/app/admin/create.php
 RewriteRule ^admin/delete/id/([0-9]+)$ core/app/admin/delete.php?id=$1  [QSA,L]
 RewriteRule ^article/([a-z0-9-]+)-([0-9]+)$ article.php?titre=$1&id=$2
+
+ErrorDocument 400 http://localhost/gearing/400.php
+ErrorDocument 401 http://localhost/gearing/401.php
+ErrorDocument 402 http://localhost/gearing/402.php
+ErrorDocument 403 http://localhost/gearing/403.php
+ErrorDocument 404 http://localhost/gearing/404.php
+ErrorDocument 405 http://localhost/gearing/405.php
+ErrorDocument 500 http://localhost/gearing/500.php
+ErrorDocument 501 http://localhost/gearing/501.php
+ErrorDocument 502 http://localhost/gearing/502.php
+ErrorDocument 503 http://localhost/gearing/503.php
+ErrorDocument 504 http://localhost/gearing/504.php
+ErrorDocument 505 http://localhost/gearing/505.php
