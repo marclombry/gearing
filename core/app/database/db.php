@@ -3,7 +3,7 @@ class DB{
 	//@var array environnement for database connexion
 	public $config = [
 	'db_host'=>'localhost',
-	'db_name'=>'linker',
+	'db_name'=>'tirelire',
 	'db_user'=>'root',
 	'db_pass'=>''
 	];
@@ -117,6 +117,13 @@ class DB{
 
 	public function all($field,$table){
 		return $this->PDOinstance->query("SELECT $field FROM $table")->fetchAll();
+	}
+
+	public function select($query,$one=null){
+		if($one){
+			return $this->PDOinstance->query($query)->fetch(PDO::FETCH_OBJ);
+		}
+		return $this->PDOinstance->query($query)->fetchAll(PDO::FETCH_OBJ);
 	}
 
 }

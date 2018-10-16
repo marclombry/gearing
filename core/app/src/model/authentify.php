@@ -1,4 +1,5 @@
 <?php
+namespace core\app\src\model;
 class Authentify{
 	private $id;
 	private $pseudo;
