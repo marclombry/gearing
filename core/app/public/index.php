@@ -5,6 +5,6 @@ use \core\app\classes\FormFilter;
 use \core\app\classes\Html;
 use \core\app\classes\Route;
 use \core\app\classes\MySession;
-var_dump(MySession::Verif_session());
-echo Form::input("text","f");
+require'../src/view/index.view.php';
+
 
