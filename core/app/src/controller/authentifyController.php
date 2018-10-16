@@ -32,7 +32,7 @@ class AuthentifyController{
 			}
 			
 			//if there is a request and is a good request, i instance new Authentify class
-			if(isset($check)){
+			if(isset($check) && !empty($_POST['pseudo'])){
 				$error='';
 				$auth = new Authentify();
 				$auth->hydrate($check);
@@ -67,9 +67,10 @@ class AuthentifyController{
 
 			if($confirmPseudo ===false || $confirmEmail ===false|| $confirmPassword ===false|| $confirmSecret ===false)
 			{
-				$_SESSION['error'] =" une érreur est survenue veuillez recommencer";
+				echo " une érreur est survenue veuillez recommencer";
+				//$_SESSION['error'] =" une érreur est survenue veuillez recommencer";
 				Route::Url('/gearing');
-				$_SESSION['error'];
+				//$_SESSION['error'];
 			}
 			$srt = htmlentities($_POST['pseudo'].','.$_POST['email'].','.password_hash($_POST['password'],PASSWORD_DEFAULT).','.$_POST['secret']);
 			$insert = $database->inst('authentify',
@@ -77,8 +78,8 @@ class AuthentifyController{
 				':pseudo,:email,:password,:secret',
 				$srt
 			);
-			
-			$_SESSION['message']['register']='Vous voici inscrit';
+			echo "Vous ete inscrit";
+			//$_SESSION['message']['register']='Vous voici inscrit';
 			Route::Url('/gearing');
 		}
 		
