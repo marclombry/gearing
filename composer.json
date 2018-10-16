@@ -12,6 +12,7 @@
 	   }
 	},
     "require": {
-        "twbs/bootstrap": "^4.1"
+        "twbs/bootstrap": "^4.1",
+        "nnnick/chartjs": "^2.7"
     }
 }

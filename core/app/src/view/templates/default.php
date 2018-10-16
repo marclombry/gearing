@@ -25,9 +25,7 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <style>
-    		nav{margin:0px 0px 20px 0px;}
-    		#content{margin-top: 100px;}
-      		form{margin: 100px 10px 10px 10px;}
+    		
     	</style>
     </head>
 
