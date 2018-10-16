@@ -8,7 +8,7 @@
 <p><?= $describe; ?></p>
 <?php require'../src/view/partials/formular.view.php' ;?>
 
-
+<div id="messa"></div>
 
 <?php $content = ob_get_clean(); ?>
 

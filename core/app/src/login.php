@@ -9,5 +9,5 @@ AuthentifyController::Connexion();
 if(isset($_GET['deco'])){
 	AuthentifyController::Deconnexion();
 }
-
+$titleH1 = 'Connexion';
 require_once('view/login.view.php');

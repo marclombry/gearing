@@ -13,4 +13,5 @@ if(isset($_POST) && !empty($_POST))
 {
 	AuthentifyController::Register();
 }
+$titleH1 = 'Inscription';
 require_once('view/login.view.php');

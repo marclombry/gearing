@@ -40,7 +40,7 @@ class AuthentifyController{
 				Route::Url('/gearing');
 			
 			}else{
-				$error = "<div class='alert warning'>Informations incorrect</div>";
+				$_SESSION['error'] = "<div class='alert warning'>Informations incorrect</div>";
 				//header('location:/tirelire/');
 				//echo $error;
 			}
@@ -71,7 +71,7 @@ class AuthentifyController{
 				Route::Url('/gearing');
 				$_SESSION['error'];
 			}
-			$srt = htmlentities($_POST['pseudo'].','.$_POST['email'].','.$_POST['password'].','.$_POST['secret']);
+			$srt = htmlentities($_POST['pseudo'].','.$_POST['email'].','.password_hash($_POST['password'],PASSWORD_DEFAULT).','.$_POST['secret']);
 			$insert = $database->inst('authentify',
 				'pseudo,email,password,secret',
 				':pseudo,:email,:password,:secret',
