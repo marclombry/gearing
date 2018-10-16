@@ -1,4 +1,14 @@
 <?php
+
+// return name of application
+if(! function_exists('nameApp')){
+	function nameApp(){
+		return isset($_SERVER['REQUEST_URI'])? $_SERVER['REQUEST_URI']: '/';
+	}
+
+}
+
+
 // renvoie une mise en forme html d'un array //
 if(! function_exists('tableHtmlForMail')){
 	function tableHtmlForMail($array=null){

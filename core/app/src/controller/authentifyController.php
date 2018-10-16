@@ -1,10 +1,12 @@
 <?php
 namespace core\app\src\controller;
+use core\app\classes\Route;
 class AuthentifyController{
 
 	public static function index()
 	{
-		Route::Url(strtolower($titleApp));
+		
+		Route::Url('/gearing');
 	}
 
 	public static function Connexion()
@@ -34,7 +36,7 @@ class AuthentifyController{
 				$auth = new Authentify();
 				$auth->hydrate($check);
 				$auth->connexion();
-				core\app\classes\Route::Url(strtolower($titleApp));
+				Route::Url('/gearing');
 			
 			}else{
 				$error = "<div class='alert warning'>Informations incorrect</div>";
@@ -66,6 +68,6 @@ class AuthentifyController{
 
 	public static function Deconnexion(){
 		session_destroy();
-		Route::Url(strtolower($titleApp));
+		Route::Url('/gearing');
 	}
 }
