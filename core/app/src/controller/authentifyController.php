@@ -68,16 +68,18 @@ class AuthentifyController{
 			if($confirmPseudo ===false || $confirmEmail ===false|| $confirmPassword ===false|| $confirmSecret ===false)
 			{
 				$_SESSION['error'] =" une érreur est survenue veuillez recommencer";
-				//Route::Url('/gearing');
-				//return $_SESSION['error'];
+				Route::Url('/gearing');
+				$_SESSION['error'];
 			}
-
+			$srt = htmlentities($_POST['pseudo'].','.$_POST['email'].','.$_POST['password'].','.$_POST['secret']);
 			$insert = $database->inst('authentify',
 				'pseudo,email,password,secret',
 				':pseudo,:email,:password,:secret',
-				"pseudo,email,password,secret"
+				$srt
 			);
-			var_dump($insert);
+			
+			$_SESSION['message']['register']='Vous voici inscrit';
+			Route::Url('/gearing');
 		}
 		
 	}

@@ -33,7 +33,7 @@
         
 
         <?= $content ?>
-        <?= $_SESSION['error'];?>
+        <?= isset($_SESSION['error'])?$_SESSION['error']:null;?>
 
 
 <?php require '../src/view/partials/footer.view.php';?>

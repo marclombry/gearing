@@ -3,7 +3,7 @@ class DB{
 	//@var array environnement for database connexion
 	public $config = [
 	'db_host'=>'localhost',
-	'db_name'=>'tirelire',
+	'db_name'=>'gearing',
 	'db_user'=>'root',
 	'db_pass'=>''
 	];
@@ -85,7 +85,9 @@ class DB{
 		foreach ($val as $k => $v) {
 			$stmt->bindParam($v,$dat[$k]);
 		}
+		
 		$stmt->execute();
+
 	}
 
 	/**
@@ -127,8 +129,9 @@ class DB{
 	}
 
 	public function insert($table,$field,$value){
-		$q = $this->pdo->prepare("INSERT INTO $table ($field) VALUES ($value)");
-		$q->execute($donne);
+		$q = $this->PDOinstance->prepare("INSERT INTO $table ($field) VALUES ($value)");
+		$q->execute($value);
 	}
+
 
 }
