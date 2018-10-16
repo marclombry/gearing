@@ -3,20 +3,21 @@ RewriteEngine On
 RewriteRule ^$ core/app/public/index.php
 RewriteRule ^login$ core/app/src/login.php
 RewriteRule ^deco$ core/app/src/login.php?deco
+RewriteRule ^register$ core/app/src/register.php
 RewriteRule ^admin$ core/app/admin
 RewriteRule ^create$ core/app/admin/create.php
 RewriteRule ^admin/delete/id/([0-9]+)$ core/app/admin/delete.php?id=$1  [QSA,L]
 RewriteRule ^article/([a-z0-9-]+)-([0-9]+)$ article.php?titre=$1&id=$2
 
-ErrorDocument 400 http://localhost/gearing/400.php
-ErrorDocument 401 http://localhost/gearing/401.php
-ErrorDocument 402 http://localhost/gearing/402.php
-ErrorDocument 403 http://localhost/gearing/403.php
-ErrorDocument 404 http://localhost/gearing/404.php
-ErrorDocument 405 http://localhost/gearing/405.php
-ErrorDocument 500 http://localhost/gearing/500.php
-ErrorDocument 501 http://localhost/gearing/501.php
-ErrorDocument 502 http://localhost/gearing/502.php
-ErrorDocument 503 http://localhost/gearing/503.php
-ErrorDocument 504 http://localhost/gearing/504.php
-ErrorDocument 505 http://localhost/gearing/505.php
+ErrorDocument 400 http://localhost/gearing/400.php?erreur=400
+ErrorDocument 401 http://localhost/gearing/401.php?erreur=401
+ErrorDocument 402 http://localhost/gearing/402.php?erreur=402
+ErrorDocument 403 http://localhost/gearing/403.php?erreur=403
+ErrorDocument 404 http://localhost/gearing/404.php?erreur=404
+ErrorDocument 405 http://localhost/gearing/405.php?erreur=405
+ErrorDocument 500 http://localhost/gearing/500.php?erreur=500
+ErrorDocument 501 http://localhost/gearing/501.php?erreur=501
+ErrorDocument 502 http://localhost/gearing/502.php?erreur=502
+ErrorDocument 503 http://localhost/gearing/503.php?erreur=503
+ErrorDocument 504 http://localhost/gearing/504.php?erreur=504
+ErrorDocument 505 http://localhost/gearing/505.php?erreur=505

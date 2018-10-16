@@ -1,10 +1,9 @@
  <hr>
 
       <footer>
-        <p class="text-center">&copy; <?= '2018 '.date('Y')?>, Marc Lombry.</p>
+        <p class="text-center">&copy; <?= '2018 - '.date('Y')?>, Marc Lombry.</p>
       </footer>
 
-    </div><!--/.container-->
 
 
     <!-- Bootstrap core JavaScript

@@ -126,4 +126,9 @@ class DB{
 		return $this->PDOinstance->query($query)->fetchAll(PDO::FETCH_OBJ);
 	}
 
+	public function insert($table,$field,$value){
+		$q = $this->pdo->prepare("INSERT INTO $table ($field) VALUES ($value)");
+		$q->execute($donne);
+	}
+
 }

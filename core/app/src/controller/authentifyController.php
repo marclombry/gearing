@@ -1,11 +1,12 @@
 <?php
 namespace core\app\src\controller;
+use core\app\src\model\Authentify;
 use core\app\classes\Route;
+use core\app\classes\FormFilter;
 class AuthentifyController{
 
 	public static function index()
 	{
-		
 		Route::Url('/gearing');
 	}
 
@@ -43,24 +44,7 @@ class AuthentifyController{
 				//header('location:/tirelire/');
 				//echo $error;
 			}
-			/*
-			if(!empty($pseudo)){
-				$check = $database->select("SELECT id, pseudo, email, password, secret, token, administator FROM authentify WHERE pseudo = '$pseudo' AND email = '$email' AND password = '$password' AND secret = '$secret' ",true);
-				
-				$password = isset($_POST['password'])? password_verify($_POST['password'],$check->password):'';
-					// if the information matches that of the database
-				if(isset($pseudo) == $check->pseudo && isset($email) == $check->email && isset($password) == $check->password && isset($secret) == $check->secret ){
-					$auth = new Authentify();
-					$auth->hydrate($check);
-					$auth->connexion();
-					//header('location:/tirelire/');
-				}else{
-					var_dump($_POST);
-					//header('location:/tirelire/');
-				}
-			}
-			*/
-			//une erreur 
+		
 
 		}
 		
@@ -69,5 +53,32 @@ class AuthentifyController{
 	public static function Deconnexion(){
 		session_destroy();
 		Route::Url('/gearing');
+	}
+
+	public static function Register(){
+		if(isset($_POST) && !empty($_POST)){
+			global $database;
+			
+			$confirm= !empty($_POST)?FormFilter::input_filter($_POST):false;
+			$confirmPseudo = !empty($_POST['pseudo'])?FormFilter::secure_input_length($_POST['pseudo'], $min=6, $max =255):false;
+			$confirmEmail = !empty($_POST['email'])?FormFilter::secure_email($_POST['email']):false;
+			$confirmPassword = !empty($_POST['password'])?FormFilter::secure_input_length($_POST['password'], $min=6, $max =255):false;
+			$confirmSecret= !empty($_POST['secret'])?FormFilter::secure_input_length($_POST['secret'], $min=6, $max =255):false;
+
+			if($confirmPseudo ===false || $confirmEmail ===false|| $confirmPassword ===false|| $confirmSecret ===false)
+			{
+				$_SESSION['error'] =" une érreur est survenue veuillez recommencer";
+				//Route::Url('/gearing');
+				//return $_SESSION['error'];
+			}
+
+			$insert = $database->inst('authentify',
+				'pseudo,email,password,secret',
+				':pseudo,:email,:password,:secret',
+				"pseudo,email,password,secret"
+			);
+			var_dump($insert);
+		}
+		
 	}
 }

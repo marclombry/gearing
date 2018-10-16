@@ -1,4 +1,4 @@
-<?php require '../src/view/partials/nav.view.php';?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,9 +14,9 @@
 
         <link href="style.css" rel="stylesheet" /> 
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <link rel="stylesheet" href="http://localhost/<?= strtolower($titleApp); ?>/core/app/public/css/restart.css">
-	    <link rel="stylesheet" href="http://localhost/<?= strtolower($titleApp); ?>/core/app/public/css/engrenage.css">
-	    <link rel="stylesheet" href="http://localhost/<?= strtolower($titleApp); ?>/core/app/public/css/common.css">
+	    <link rel="stylesheet" href="http://localhost/gearing/core/app/public/css/restart.css">
+	    <link rel="stylesheet" href="http://localhost/gearing/core/app/public/css/engrenage.css">
+	    <link rel="stylesheet" href="http://localhost/gearing/core/app/public/css/common.css">
 	    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.0beta/css/icofont.css" integrity="sha384-+iJF6xK4xnr+UBchttOu5eVXU3O/+WiateNu6D76ixKwFPrlm5NkgTnAR35tgjMU" crossorigin="anonymous">
 
 		<!-- jQuery library -->
@@ -28,10 +28,12 @@
     		
     	</style>
     </head>
-
+    <body>
+    <?php require '../src/view/partials/nav.view.php';?>
         
 
-    <body>
         <?= $content ?>
+        <?= $_SESSION['error'];?>
+
 
 <?php require '../src/view/partials/footer.view.php';?>

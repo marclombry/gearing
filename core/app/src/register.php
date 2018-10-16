@@ -9,5 +9,8 @@ AuthentifyController::Connexion();
 if(isset($_GET['deco'])){
 	AuthentifyController::Deconnexion();
 }
-
+if(isset($_POST) && !empty($_POST))
+{
+	AuthentifyController::Register();
+}
 require_once('view/login.view.php');

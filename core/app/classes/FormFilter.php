@@ -18,4 +18,9 @@ class FormFilter{
 	{
 		return strlen($input) >=$min && strlen($input) <=$max;
 	}
+
+	public static function secure_email($email)
+	{
+		return filter_var($email,FILTER_VALIDATE_EMAIL);
+	}
 }
