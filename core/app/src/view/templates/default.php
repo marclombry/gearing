@@ -33,7 +33,7 @@
         
 
         <?= $content ?>
-       <?php var_dump($_SESSION); ?>
+      
 
 
 <?php require '../src/view/partials/footer.view.php';?>

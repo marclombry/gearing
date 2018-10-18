@@ -38,11 +38,8 @@ class AuthentifyController{
 				$auth->hydrate($check);
 				$auth->connexion();
 				Route::Url('/gearing');
+
 			
-			}else{
-				$_SESSION['error'] = "<div class='alert warning'>Informations incorrect</div>";
-				//header('location:/tirelire/');
-				//echo $error;
 			}
 		
 

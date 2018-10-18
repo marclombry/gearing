@@ -4,6 +4,7 @@ RewriteRule ^$ core/app/public/index.php
 RewriteRule ^login$ core/app/src/login.php
 RewriteRule ^deco$ core/app/src/login.php?deco
 RewriteRule ^register$ core/app/src/register.php
+RewriteRule ^profil$ core/app/src/profil.php
 RewriteRule ^admin$ core/app/admin
 RewriteRule ^create$ core/app/admin/create.php
 RewriteRule ^admin/delete/id/([0-9]+)$ core/app/admin/delete.php?id=$1  [QSA,L]

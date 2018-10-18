@@ -90,8 +90,8 @@ class Html{
 	 * @param string $link  [link ]
 	 * @param string $title [description]
 	 */
-	public static function A($href,$link='',$title=''){
-		return "<a href=$href title=$title>$link</a>";
+	public static function A($href,$link='',$title='',$blank=true){
+		return ($blank)?"<a href=$href title=$title rel='noopener'>$link</a>": "<a href=$href title=$title target='_BLANK' rel='noopener'>$link</a>";
 	}
 
 	/**
