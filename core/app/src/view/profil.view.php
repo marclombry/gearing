@@ -13,7 +13,7 @@
 		<?php
 		foreach ($user as $key => $value) {
 			if($key =='pseudo' || $key =='email'){
-				echo '<li>'.$key.' : '.$value.'</li>';
+				echo '<li>'.ucfirst($key).' : '.$value.'</li>';
 			}
 			
 		}
@@ -24,8 +24,11 @@
 		<ul>
 		<?php
 		foreach ($user_info as $key => $value) {
-			echo '<li>'.$key.' : '.$value.'</li>';
+			if($key ==='picture' || $key ==='adresse' || $key ==='cp' || $key ==='city' || $key === 'phone'){
+				echo '<li>'.ucfirst($key).' : '.$value.'</li>';
+			}	
 		}
+		
 		?>
 		</ul>
 	</div>

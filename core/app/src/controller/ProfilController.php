@@ -12,7 +12,7 @@ class ProfilController{
 	{
 		global $database;
 		
-		return $database->qry("SELECT * FROM profil 
+		return $database->qry("SELECT profil.picture, profil.adresse, profil.cp, profil.city, profil.phone FROM profil 
 			LEFT JOIN authentify
 			ON authentify.id = profil.id_user WHERE authentify.id=$auth[id]
 			",true);
