@@ -9,5 +9,5 @@ $auth = new Authentify();
 $auth->connexion();
 $user = $auth->connexion();
 $profil = new ProfilController();
-var_dump($profil->showProfil($user));
+$user_info = $profil->showProfil($user);
 require_once('view/profil.view.php');
