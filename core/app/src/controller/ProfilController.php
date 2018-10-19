@@ -4,6 +4,7 @@ use core\app\src\model\Authentify;
 use core\app\src\model\Profil;
 use core\app\classes\Route;
 use core\app\classes\FormFilter;
+use core\app\classes\Form;
 class ProfilController{
  //import connection in database
 	
