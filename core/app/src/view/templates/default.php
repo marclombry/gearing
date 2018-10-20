@@ -17,8 +17,7 @@
 	    <link rel="stylesheet" href="http://localhost/gearing/core/app/public/css/restart.css">
 	    <link rel="stylesheet" href="http://localhost/gearing/core/app/public/css/engrenage.css">
 	    <link rel="stylesheet" href="http://localhost/gearing/core/app/public/css/common.css">
-	    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.0beta/css/icofont.css" integrity="sha384-+iJF6xK4xnr+UBchttOu5eVXU3O/+WiateNu6D76ixKwFPrlm5NkgTnAR35tgjMU" crossorigin="anonymous">
-
+	    
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

@@ -12,6 +12,8 @@ class ProfilController{
 	public function showProfil($auth)
 	{
 		global $database;
+
+		//si des donner son transmise en post, je decode le json et je transmet les donnée
 		
 		return $database->qry("SELECT profil.picture, profil.adresse, profil.cp, profil.city, profil.phone FROM profil 
 			LEFT JOIN authentify
@@ -19,5 +21,15 @@ class ProfilController{
 			",true);
 		
 		
+	}
+
+	public function updateProfil($post)
+	{
+		if(isset($_POST)){
+			$post = FormFilter::input_filter($post);
+			var_dump($post);
+		}
+		
+
 	}
 }
