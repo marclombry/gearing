@@ -1,6 +1,7 @@
 <?php 
 	use core\app\classes\Form;
 	use core\app\classes\FormFilter;
+	
 ?>
 <?php $title = 'profil'; ?>
 
@@ -81,6 +82,8 @@
 	}
 
 	*/
+	new secureInput(document.forms[0]).showInput()
+	
 </script>
 <?php $content = ob_get_clean(); ?>
 

@@ -28,7 +28,7 @@ class AuthentifyController{
 			$passVerif = $verifPass ? password_verify($password,$verifPass->password):false;
 			// if it's a good password so i start request for recover informations
 			if($passVerif){
-				$check = $database->select("SELECT id, pseudo, email, password, secret, token, administator FROM authentify WHERE pseudo = '$pseudo' AND email = '$email' AND secret = '$secret' ",true);
+				$check = $database->select("SELECT id, pseudo, email, password, secret, token, administator FROM authentify WHERE pseudo = '$pseudo' AND password = '$verifPass->password' AND email = '$email' AND secret = '$secret' ",true);
 			}
 			
 			//if there is a request and is a good request, i instance new Authentify class
